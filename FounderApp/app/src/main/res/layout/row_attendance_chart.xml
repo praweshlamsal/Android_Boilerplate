@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <RelativeLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/row_heading"
+                style="@style/TextAppearance.AppCompat.Headline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/img_right"
+                android:maxLines="1"
+                android:text="Student Attendance"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="28dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_right"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_keyboard_arrow_right_black_24dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <com.github.lzyzsd.circleprogress.ArcProgress
+                android:id="@+id/arc_progress"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_centerHorizontal="true"
+                custom:arc_angle="280.0"
+                custom:arc_bottom_text="72%"
+                custom:arc_bottom_text_size="20sp"
+                custom:arc_finished_color="#3a56bd"
+                custom:arc_progress="72"
+                custom:arc_stroke_width="7dp"
+                custom:arc_suffix_text_size="0sp"
+                custom:arc_text_color="#2f73c1"
+                custom:arc_text_size="0sp"
+                custom:arc_unfinished_color="#d9d9d9" />
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/classroom" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <View
+                android:id="@+id/verticalLine"
+                android:layout_width="2dp"
+                android:layout_height="45dp"
+                android:layout_centerInParent="true"
+                android:background="@color/home_margin_color" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RelativeLayout
+                    android:id="@+id/present_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/present_days"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="28"
+                        android:textAlignment="center"
+                        android:textColor="#434343"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/present_days"
+                        android:text="Present"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/active_color"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/absent_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/absent_days"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="02"
+                        android:textAlignment="center"
+                        android:textColor="#434343"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/absent_days"
+                        android:text="Absent"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/red_color"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#375de1"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardCornerRadius="4dp"
+            custom:cardElevation="0dp">
+
+            <TextView
+                android:id="@+id/tv_view_more"
+                style="@style/TextAppearance.AppCompat.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="28dp"
+                android:paddingTop="12dp"
+                android:paddingRight="28dp"
+                android:paddingBottom="12dp"
+                android:text="Take Attendance"
+                android:textAllCaps="true"
+                android:textColor="@color/white_color"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_alignParentBottom="true"
+        android:background="#f8f8f8" />
+
+</RelativeLayout>
